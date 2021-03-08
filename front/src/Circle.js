@@ -2,15 +2,8 @@ import React, { useState, useRef, useEffect} from 'react';
 import { select } from 'd3';
 import './App.css';
 
-function Circle() {
+function Circle({ data }) {
   const svgRef = useRef();
-  const [data, setData] = useState([25, 30, 45, 60, 20]);
-  const onHandleSetData = () => {
-    setData(data.map((v) => v + 5));
-  }
-  const onHandleFilterSetData = () => {
-    setData(data.filter((v) => v > 35));
-  }
   useEffect(() => {
     const svgLine = select(svgRef.current);
     svgLine
@@ -25,9 +18,6 @@ function Circle() {
   return (
     <React.Fragment>
       <svg ref={svgRef}></svg>
-      <br />
-      <button type="button" onClick={onHandleSetData}>Update Date</button>
-      <button type="button" onClick={onHandleFilterSetData}>Filter Date</button>
     </React.Fragment>
   );
 }

@@ -1,3 +1,6 @@
 svg {
   background-color: #eee;
 }
+svg.line-wrapper {
+  overflow: visible;
+}
